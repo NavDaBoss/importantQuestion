@@ -1,3 +1,4 @@
+/* Beautiful Background */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -8,8 +9,10 @@ body {
     background: linear-gradient(135deg, #ff758c, #ff7eb3);
     overflow: hidden;
     margin: 0;
+    position: relative;
 }
 
+/* Centering the Container */
 .container {
     background: white;
     padding: 30px;
@@ -23,11 +26,13 @@ body {
     position: relative;
 }
 
+/* Question Text */
 h1 {
     color: #d63384;
     font-size: 24px;
 }
 
+/* Button Container - Buttons Side by Side */
 .buttons {
     display: flex;
     gap: 20px;
@@ -35,6 +40,7 @@ h1 {
     position: relative;
 }
 
+/* Button Styles */
 button {
     font-size: 18px;
     padding: 12px 25px;
@@ -45,6 +51,7 @@ button {
     font-weight: bold;
 }
 
+/* Yes Button */
 #yes-btn {
     background-color: #ff4d6d;
     color: white;
@@ -54,16 +61,37 @@ button {
     background-color: #e60039;
 }
 
+/* No Button */
 #no-btn {
     background-color: #6c757d;
     color: white;
-    position: relative;
+    position: absolute;
 }
 
+/* Message Styling */
 #message {
     margin-top: 20px;
     font-size: 22px;
     font-weight: bold;
     color: #ff4d6d;
-    display: none; 
+    display: none; /* Hidden by default */
+}
+
+/* Flower Animation */
+.flower {
+    position: absolute;
+    font-size: 24px;
+    animation: float 3s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
