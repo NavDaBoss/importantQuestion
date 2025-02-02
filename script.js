@@ -1,8 +1,10 @@
 document.getElementById("yes-btn").addEventListener("click", function() {
-    document.getElementById("message").innerText = "Yay! ❤️ Can't wait for our date!";
+    document.getElementById("main-container").style.display = "none";
+    let message = document.getElementById("message");
+    message.innerText = "Yay! ❤️ I love you!";
+    message.style.display = "block";
 });
 
-/* Move the "No" button when clicked */
 document.getElementById("no-btn").addEventListener("click", function() {
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 50);
