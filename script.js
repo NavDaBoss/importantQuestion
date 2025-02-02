@@ -3,29 +3,27 @@ document.getElementById("yes-btn").addEventListener("click", function() {
     document.querySelector(".buttons").style.display = "none";
 
     let message = document.getElementById("message");
-    message.innerText = "Yay! ❤️ I love you!";
+    message.innerText = "Yay! I love you Jennie! ❤️";
     message.style.display = "block";
 
     startFlowerAnimation();
 });
 
-
 document.getElementById("no-btn").addEventListener("click", function() {
-    const buttonWidth = this.offsetWidth;
-    const buttonHeight = this.offsetHeight;
+    const container = document.getElementById("main-container");
+    const containerRect = container.getBoundingClientRect();
+    const buttonRect = this.getBoundingClientRect();
     
-    const maxX = window.innerWidth - buttonWidth - 40; 
-    const maxY = window.innerHeight - buttonHeight - 40; 
+    const maxX = containerRect.width - buttonRect.width - 20; 
+    const maxY = containerRect.height - buttonRect.height - 20; 
     
     let randomX = Math.random() * maxX;
     let randomY = Math.random() * maxY;
 
-    if (randomX < 20) randomX = 20;
-    if (randomY < 20) randomY = 20;
-
-    this.style.left = `${randomX}px`;
-    this.style.top = `${randomY}px`;
+    this.classList.add("moving");
+    this.style.transform = `translate(${randomX}px, ${randomY}px)`;
 });
+
 
 function startFlowerAnimation() {
     for (let i = 0; i < 15; i++) {
