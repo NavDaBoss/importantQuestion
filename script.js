@@ -5,20 +5,24 @@ document.getElementById("yes-btn").addEventListener("click", function() {
     let message = document.getElementById("message");
     message.innerText = "Yay! ❤️ I love you!";
     message.style.display = "block";
-    
+
     startFlowerAnimation();
 });
+
 
 document.getElementById("no-btn").addEventListener("click", function() {
     const buttonWidth = this.offsetWidth;
     const buttonHeight = this.offsetHeight;
     
-    const maxX = window.innerWidth - buttonWidth - 20;
-    const maxY = window.innerHeight - buttonHeight - 20;
+    const maxX = window.innerWidth - buttonWidth - 40; 
+    const maxY = window.innerHeight - buttonHeight - 40; 
     
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-    
+    let randomX = Math.random() * maxX;
+    let randomY = Math.random() * maxY;
+
+    if (randomX < 20) randomX = 20;
+    if (randomY < 20) randomY = 20;
+
     this.style.left = `${randomX}px`;
     this.style.top = `${randomY}px`;
 });

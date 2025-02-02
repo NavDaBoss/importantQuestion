@@ -24,6 +24,7 @@ body {
     width: 90%;
     max-width: 400px;
     position: relative;
+    min-height: 200px;
 }
 
 /* Question Text */
